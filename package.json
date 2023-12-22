@@ -1,5 +1,5 @@
 {
-  "name": "emoporemilio-astro",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,18 +7,11 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "pages:dev": "wrangler pages dev --compatibility-date=2023-12-06 -- astro dev",
-    "pages:deploy": "astro build && wrangler pages deploy ./dist"
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^8.0.0",
-    "@astrojs/mdx": "^2.0.1",
-    "@astrojs/rss": "^4.0.1",
-    "@astrojs/sitemap": "^3.0.3",
-    "astro": "^4.0.6"
-  },
-  "devDependencies": {
-    "wrangler": "^3.21.0"
+    "@astrojs/check": "^0.3.4",
+    "astro": "^4.0.7",
+    "typescript": "^5.3.3"
   }
 }
