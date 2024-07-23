@@ -19,10 +19,24 @@ canvas.height = window.innerHeight;
 const centerX = canvas.width / 2;
 const centerY = canvas.height / 2;
 const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+ctx.beginPath();
+ctx.fillStyle = '#DF5C9A';
+ctx.fillRect(centerX-50, centerY + 50, 100, 100);
 ctx.strokeStyle = 'white';
-ctx.lineWidth = 10;
+ctx.lineWidth = 16;
 ctx.arc(centerX, centerY, 100, 0, Math.PI * 2);
 ctx.stroke();
+ctx.beginPath();
+ctx.strokeStyle = '#DF5C9A';
+ctx.lineWidth = 8;
+ctx.arc(centerX + 50, centerY, 25, 0, Math.PI * 2);
+ctx.stroke();
+ctx.beginPath();
+ctx.strokeStyle = '#75ABC7';
+ctx.lineWidth = 8;
+ctx.arc(centerX - 50, centerY, 25, 0, Math.PI * 2);
+ctx.stroke();
+
 
 } catch {}
 
