@@ -6,36 +6,80 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="EmoPorEmilio">
 	<main>
+		<div id="coordinates"></div>
 		<canvas id="main-canvas"></canvas>
 	</main>
 </Layout>
 
 <script>
+
+const coordinates = document.getElementById('coordinates');
+
 try {
 
 const canvas = document.getElementById('main-canvas') as HTMLCanvasElement;
+addEventListener('mousemove', (e) => {
+  var rect = canvas.getBoundingClientRect();
+  console.log(rect);
+	coordinates!.innerHTML = `(${e.clientX - rect.left}, ${e.clientY - rect.top})`;
+});
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-const centerX = canvas.width / 2;
-const centerY = canvas.height / 2;
+const center = {x: canvas.width / 2, y: canvas.height / 2};
+const topLeft = { x: center.x - 100, y: center.y - 100 }; 
 const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+
+
+function drawRectangleWithRoundedCorners(x: number, y: number, width: number, height: number, radius: number, stroke: boolean, fill: boolean) {
+  ctx.beginPath();
+  ctx.moveTo(x + radius, y);
+  ctx.arcTo(x + width, y, x + width, y + height, radius);
+  ctx.arcTo(x + width, y + height, x, y + height, radius);
+  ctx.arcTo(x, y + height, x, y, radius);
+  ctx.arcTo(x, y, x + width, y, radius);
+  stroke && ctx.stroke();
+  fill && ctx.fill();
+}
+
 ctx.beginPath();
-ctx.fillStyle = '#DF5C9A';
-ctx.fillRect(centerX-50, centerY + 50, 100, 100);
 ctx.strokeStyle = 'white';
-ctx.lineWidth = 16;
-ctx.arc(centerX, centerY, 100, 0, Math.PI * 2);
+ctx.fillStyle = 'white';
+ctx.lineWidth = 8;
+drawRectangleWithRoundedCorners(topLeft.x, topLeft.y, 180, 80, 40, true, false);
+drawRectangleWithRoundedCorners(topLeft.x + 90 - 20, topLeft.y + 55, 40, 10, 5, false, true);
+/*
+ctx.moveTo(topLeft.x + 140, topLeft.y);
+ctx.lineTo(topLeft.x + 40, topLeft.y);
+ctx.arcTo(topLeft.x, topLeft.y, topLeft.x, topLeft.y + 40, 40);
+ctx.arcTo(topLeft.x, topLeft.y + 80, topLeft.x + 40, topLeft.y + 80, 40);
+ctx.lineTo(topLeft.x + 140, topLeft.y + 80);
+ctx.arcTo(topLeft.x + 180, topLeft.y + 80, topLeft.x + 180, topLeft.y + 40, 40);
+ctx.arcTo(topLeft.x + 180, topLeft.y, topLeft.x + 140, topLeft.y, 40);
+ctx.stroke();
+*/
+ctx.beginPath();
+ctx.strokeStyle = '#DF5C9A';
+ctx.arc(topLeft.x + 40, topLeft.y + 40, 20, 0, Math.PI * 2);
+ctx.stroke();
+ctx.beginPath();
+ctx.strokeStyle = '#75ABC7';
+ctx.arc(topLeft.x + 140, topLeft.y + 40, 20, 0, Math.PI * 2);
+ctx.stroke();
+/* 
+ctx.fillStyle = '#DF5C9A';
+ctx.fillRect(center.x-50, center.y + 50, 100, 100); 
+ctx.arc(center.x, center.y, 100, 0, Math.PI * 2);
 ctx.stroke();
 ctx.beginPath();
 ctx.strokeStyle = '#DF5C9A';
 ctx.lineWidth = 8;
-ctx.arc(centerX + 50, centerY, 25, 0, Math.PI * 2);
+ctx.arc(center.x + 50, center.y, 25, 0, Math.PI * 2);
 ctx.stroke();
 ctx.beginPath();
 ctx.strokeStyle = '#75ABC7';
 ctx.lineWidth = 8;
-ctx.arc(centerX - 50, centerY, 25, 0, Math.PI * 2);
-ctx.stroke();
+ctx.arc(center.x - 50, center.y, 25, 0, Math.PI * 2);
+ctx.stroke();*/
 
 
 } catch {}
