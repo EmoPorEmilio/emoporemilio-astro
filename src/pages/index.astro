@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+
 ---
 
 <Layout title="EmoPorEmilio">
@@ -7,6 +9,20 @@ import Layout from '../layouts/Layout.astro';
 		<canvas id="main-canvas"></canvas>
 	</main>
 </Layout>
+
+<script>
+try {
+
+const canvas = document.getElementById('main-canvas') as HTMLCanvasElement;
+const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+ctx.strokeStyle = 'white';
+ctx.lineTo(0, 0);
+ctx.lineTo(100, 100);
+ctx.stroke();
+
+} catch {}
+
+</script>
 
 <style>
 	main {
