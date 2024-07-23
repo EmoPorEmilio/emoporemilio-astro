@@ -12,7 +12,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Página personal de EmoPorEmilio. " />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="icon" type="image/png" id="activity-favicon" href="/favicon-on.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -20,6 +20,16 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
+<script>
+window.onblur=function(){
+	var link: any = document.querySelector("link[rel~='icon']");
+	link.href = '/favicon-off.png';
+}
+window.onfocus=function(){
+	var link: any = document.querySelector("link[rel~='icon']");
+	link.href = '/favicon-on.png';
+}
+</script>
 <style is:global>
 	html, body {
 		font-family: system-ui, sans-serif;
