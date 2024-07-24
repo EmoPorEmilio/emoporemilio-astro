@@ -18,14 +18,17 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="font-jost">
-		<nav>
+	<body class="font-jost bg-bg-100">
+		<nav class="bg-bg-400 border-b-2 border-accent-500 text-xl font-sen">
 			<div class="logo">
-				<img src="/logo.svg" width="100px" alt="Logo" />
+				<a href="/">
+					<img src="/logo.png"  alt="Logo" />
+				</a>
 			</div>
-			<a href="/">INICIO</a>
-			<a href="/blog">BLOG</a>
-			<a href="/about">SOBRE MÍ</a>
+			<a class="text-primary-100 hover:text-primary-500" href="/">INICIO</a>
+			<a class="text-primary-100 hover:text-primary-500" href="/audiovisual">AUDIOVISUAL</a>
+			<a class="text-primary-100 hover:text-primary-500" href="/blog">BLOG</a>
+			<a class="text-primary-100 hover:text-primary-500" href="/about">SOBRE MÍ</a>
 		</nav>
 		<slot />
 	</body>
@@ -52,20 +55,13 @@ window.onfocus=function(){
 		display: flex;
 		align-items: start;
 		flex: 1;
-	
 	}
 	nav {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		padding: 1rem 2rem 1rem 2rem;
+		padding: 0.5rem 1.5rem 0.5rem 1.5rem;
 		gap: 2rem;
-	}
-	a {
-		color: white;
-	}
-	a:hover {
-		color: #75ABC7;
 	}
 	code {
 		font-family:
