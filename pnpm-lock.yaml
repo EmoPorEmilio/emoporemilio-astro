@@ -23,6 +23,12 @@ importers:
       '@fontsource/sen':
         specifier: ^5.0.20
         version: 5.0.20
+      '@iconify-json/ic':
+        specifier: ^1.1.17
+        version: 1.1.17
+      '@iconify-json/mdi':
+        specifier: ^1.1.67
+        version: 1.1.67
       astro:
         specifier: ^4.8.2
         version: 4.12.2(@types/node@20.14.12)(typescript@5.5.4)
@@ -373,6 +379,12 @@ packages:
 
   '@fontsource/sen@5.0.20':
     resolution: {integrity: sha512-/sOwoAUz7GY9MoMr0TEQFtKOeEsrF6LLdT+Rq/M3xLJXJk4F05V24I1TTGqkv7aUpHp8j6JRP5VXj5EKQYwlvw==}
+
+  '@iconify-json/ic@1.1.17':
+    resolution: {integrity: sha512-EvAjZzVESmN36zlyefylePUNaU2BQ3eRKVZ6KQSQ2bG01ppoZaiFZRri74VTyvp5Mlv2yn68ux1fgCoT+etGmA==}
+
+  '@iconify-json/mdi@1.1.67':
+    resolution: {integrity: sha512-00nllHES8hyACwIfgySlQgAE6MKgpr2wsKfpifMiZWZ9aXC5l4Jb0lR3lJSWwXgOW6kzAOdzC3T+2VOfBBZ13A==}
 
   '@iconify/tools@3.0.7':
     resolution: {integrity: sha512-DxfhFLMnooS34dHelpGUnnYrxLZHs0czC1CgrBhAbuL8ddVzBb2VEQm8kh9qGh7A34qeXAB5iSHH3A72rAaFrg==}
@@ -2826,6 +2838,14 @@ snapshots:
   '@fontsource/jost@5.0.18': {}
 
   '@fontsource/sen@5.0.20': {}
+
+  '@iconify-json/ic@1.1.17':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mdi@1.1.67':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/tools@3.0.7':
     dependencies:
