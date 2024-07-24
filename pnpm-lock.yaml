@@ -17,6 +17,12 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.12.2(typescript@5.5.4))(tailwindcss@3.4.6)
+      '@fontsource/jost':
+        specifier: ^5.0.18
+        version: 5.0.18
+      '@fontsource/sen':
+        specifier: ^5.0.20
+        version: 5.0.20
       astro:
         specifier: ^4.8.2
         version: 4.12.2(typescript@5.5.4)
@@ -352,6 +358,12 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/jost@5.0.18':
+    resolution: {integrity: sha512-NeFIj4DQ7Ll5VocGrH9yIZcgzyxXfpiPf01PeQORR3HR9NhcNQGpzOLtqAdpQKQnbjw5IcG6ACnucsFUFX9szw==}
+
+  '@fontsource/sen@5.0.20':
+    resolution: {integrity: sha512-/sOwoAUz7GY9MoMr0TEQFtKOeEsrF6LLdT+Rq/M3xLJXJk4F05V24I1TTGqkv7aUpHp8j6JRP5VXj5EKQYwlvw==}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -2558,6 +2570,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource/jost@5.0.18': {}
+
+  '@fontsource/sen@5.0.20': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:

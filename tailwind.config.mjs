@@ -3,6 +3,10 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      fontFamily: {
+        jost: ['Jost', 'sans-serif'],
+        sen: ['Sen', 'sans-serif'],
+      },
       colors: {
         transparent: 'transparent',
         'bg-100': '#3B5260',
