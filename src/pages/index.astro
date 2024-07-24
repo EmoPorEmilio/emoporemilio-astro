@@ -47,9 +47,10 @@ function drawRectangleWithRoundedCorners(x: number, y: number, width: number, he
 
 ctx.beginPath();
 ctx.strokeStyle = 'white';
-ctx.fillStyle = 'white';
 ctx.lineWidth = 12;
-drawRectangleWithRoundedCorners(topLeft.x + 8, topLeft.y + 6, 308, 150, 75, true, false);
+ctx.fillStyle = '#141414';
+drawRectangleWithRoundedCorners(topLeft.x + 8, topLeft.y + 6, 308, 150, 75, true, true);
+ctx.fillStyle = 'white';
 drawRectangleWithRoundedCorners(topLeft.x + 160 - 22, topLeft.y + 110, 48, 23, 11, false, true);
 
 
