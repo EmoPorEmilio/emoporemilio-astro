@@ -1,83 +1,98 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-
+import Layout from '@layouts/Layout.astro';
 ---
 
-<Layout title="EmoPorEmilio">
-	<main>
-		<div id="coordinates"></div>
-		<canvas width="400" height="400" id="main-canvas"></canvas>
-		<div style="position: absolute; top: 40px; left: 10px; opacity: 0.5">
-</div>"
-
-	</main>
+<Layout title='EmoPorEmilio'>
+  <main>
+    <div id='coordinates'></div>
+    <canvas width='400' height='400' id='main-canvas'></canvas>
+    <div style='position: absolute; top: 40px; left: 10px; opacity: 0.5'></div>"
+  </main>
 </Layout>
 
 <script>
+  const coordinates = document.getElementById('coordinates');
 
-const coordinates = document.getElementById('coordinates');
-
-try {
-
-const canvas = document.getElementById('main-canvas') as HTMLCanvasElement;
-addEventListener('mousemove', (e) => {
-  var rect = canvas.getBoundingClientRect();
-  console.log(rect);
-	coordinates!.innerHTML = `(${e.clientX - rect.left}, ${e.clientY - rect.top})`;
-});
-/*
+  try {
+    const canvas = document.getElementById('main-canvas') as HTMLCanvasElement;
+    addEventListener('mousemove', (e) => {
+      var rect = canvas.getBoundingClientRect();
+      console.log(rect);
+      coordinates!.innerHTML = `(${e.clientX - rect.left}, ${e.clientY - rect.top})`;
+    });
+    /*
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 */
-const topLeft = { x: 8, y: 8 }; 
-const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+    const topLeft = { x: 8, y: 8 };
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
+    function drawRectangleWithRoundedCorners(
+      x: number,
+      y: number,
+      width: number,
+      height: number,
+      radius: number,
+      stroke: boolean,
+      fill: boolean
+    ) {
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.arcTo(x + width, y, x + width, y + height, radius);
+      ctx.arcTo(x + width, y + height, x, y + height, radius);
+      ctx.arcTo(x, y + height, x, y, radius);
+      ctx.arcTo(x, y, x + width, y, radius);
+      stroke && ctx.stroke();
+      fill && ctx.fill();
+    }
 
-function drawRectangleWithRoundedCorners(x: number, y: number, width: number, height: number, radius: number, stroke: boolean, fill: boolean) {
-  ctx.beginPath();
-  ctx.moveTo(x + radius, y);
-  ctx.arcTo(x + width, y, x + width, y + height, radius);
-  ctx.arcTo(x + width, y + height, x, y + height, radius);
-  ctx.arcTo(x, y + height, x, y, radius);
-  ctx.arcTo(x, y, x + width, y, radius);
-  stroke && ctx.stroke();
-  fill && ctx.fill();
-}
+    ctx.beginPath();
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 12;
+    ctx.fillStyle = '#141414';
+    drawRectangleWithRoundedCorners(
+      topLeft.x + 8,
+      topLeft.y + 6,
+      308,
+      150,
+      75,
+      true,
+      true
+    );
+    ctx.fillStyle = 'white';
+    drawRectangleWithRoundedCorners(
+      topLeft.x + 160 - 22,
+      topLeft.y + 110,
+      48,
+      23,
+      11,
+      false,
+      true
+    );
 
-ctx.beginPath();
-ctx.strokeStyle = 'white';
-ctx.lineWidth = 12;
-ctx.fillStyle = '#141414';
-drawRectangleWithRoundedCorners(topLeft.x + 8, topLeft.y + 6, 308, 150, 75, true, true);
-ctx.fillStyle = 'white';
-drawRectangleWithRoundedCorners(topLeft.x + 160 - 22, topLeft.y + 110, 48, 23, 11, false, true);
+    ctx.beginPath();
+    ctx.strokeStyle = '#75ABC7';
+    ctx.arc(topLeft.x + 88, topLeft.y + 80, 47, 0, Math.PI * 2);
+    ctx.stroke();
 
-
-ctx.beginPath();
-ctx.strokeStyle = '#75ABC7';
-ctx.arc(topLeft.x + 88, topLeft.y + 80, 47, 0, Math.PI * 2);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.strokeStyle = '#DF5C9A';
-ctx.arc(topLeft.x + 236, topLeft.y + 80, 47, 0, Math.PI * 2);
-ctx.stroke();
-} catch {}
-
+    ctx.beginPath();
+    ctx.strokeStyle = '#DF5C9A';
+    ctx.arc(topLeft.x + 236, topLeft.y + 80, 47, 0, Math.PI * 2);
+    ctx.stroke();
+  } catch {}
 </script>
 
 <style>
-	main {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	main-canvas {
-		width: 400px;
-		height: 400px;
-	}
+  main {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  main-canvas {
+    width: 400px;
+    height: 400px;
+  }
 </style>
