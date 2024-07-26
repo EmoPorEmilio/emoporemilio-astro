@@ -15,7 +15,6 @@ import Layout from '@layouts/Layout.astro';
     const canvas = document.getElementById('main-canvas') as HTMLCanvasElement;
     addEventListener('mousemove', (e) => {
       var rect = canvas.getBoundingClientRect();
-      console.log(rect);
       coordinates!.innerHTML = `(${e.clientX - rect.left}, ${e.clientY - rect.top})`;
     });
     /*
