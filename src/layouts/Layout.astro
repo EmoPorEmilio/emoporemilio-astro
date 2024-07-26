@@ -13,7 +13,9 @@ const currentLinkClass = 'text-primary-500 pointer-events-none font-light';
 const hoverLinkClass = 'text-primary-100 hover:text-accent-200';
 
 const checkClass = (path: string) => {
-  return pathname === path ? currentLinkClass : hoverLinkClass;
+  return pathname === path || pathname === path + '/'
+    ? currentLinkClass
+    : hoverLinkClass;
 };
 
 const links = [
