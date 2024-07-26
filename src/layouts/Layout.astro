@@ -5,31 +5,38 @@ interface Props {
 import '@fontsource/jost';
 import '@fontsource/sen';
 import { Icon } from 'astro-icon/components';
+import { ViewTransitions } from 'astro:transitions';
+
 
 const { title } = Astro.props;
 const { pathname } = Astro.url;
 const currentLinkClass = 'text-primary-500 pointer-events-none font-light';
 const hoverLinkClass = 'text-primary-100 hover:text-accent-200';
+
+const checkClass = (path: string) => {
+  return pathname === path ? currentLinkClass : hoverLinkClass;
+};
+
 const links = [
   {
     href: '/',
     text: 'INICIO',
-    class: pathname === '/' ? currentLinkClass : hoverLinkClass,
+    class: checkClass('/'),
   },
   {
-    href: '/audiovisual',
-    text: 'AUDIOVISUAL',
-    class: pathname === '/audiovisual' ? currentLinkClass : hoverLinkClass,
+    href: '/projects',
+    text: 'PROYECTOS',
+    class: checkClass('/projects'),
   },
   {
     href: '/blog',
     text: 'BLOG',
-    class: pathname === '/blog' ? currentLinkClass : hoverLinkClass,
+    class: checkClass('/blog'),
   },
   {
     href: '/about',
     text: 'SOBRE MÍ',
-    class: pathname === '/about' ? currentLinkClass : hoverLinkClass,
+    class: checkClass('/about'),
   },
 ];
 ---
@@ -48,6 +55,7 @@ const links = [
     />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
+	<ViewTransitions/>
   </head>
   <body class='font-jost subpixel-antialiased bg-bg-100'>
     <nav
