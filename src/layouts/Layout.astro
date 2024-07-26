@@ -62,17 +62,31 @@ const links = [
   <body class='font-jost subpixel-antialiased bg-bg-100'>
     <nav
       class='bg-bg-400 h-[70px] border-b-4 border-accent-500 text-lg font-semibold'>
-      <div class='logo'>
+      <div class='flex items-start flex-1 gap-2'>
         <a href='/'>
           <img src='/logo.png' alt='Logo' />
         </a>
-        <Icon
-          name='ic:baseline-tiktok'
-          class='subpixel-antialiased text-accent-200'
-          size={24}
-        />
-        <Icon name='mdi:github' size={24} />
-        <Icon name='mdi:youtube' size={24} />
+        <a href='https://www.tiktok.com/@emoporemilio'>
+          <Icon
+            name='ic:baseline-tiktok'
+            class='subpixel-antialiased text-primary-500'
+            size={24}
+          />
+        </a>
+        <a href='https://www.github.com/emoporemilio'>
+          <Icon
+            name='mdi:github'
+            class='subpixel-antialiased text-primary-200'
+            size={24}
+          /></a
+        >
+        <a href='https://www.youtube.com/emoporemilio'>
+          <Icon
+            name='mdi:youtube'
+            class='subpixel-antialiased text-accent-500'
+            size={24}
+          />
+        </a>
       </div>
       {
         links.map((link) => (
@@ -85,48 +99,49 @@ const links = [
     <main class='flex flex-col items-center justify-center'>
       <slot />
     </main>
-  </body><script>
-    window.onblur = function () {
-      var link: any = document.querySelector("link[rel~='icon']");
-      link.href = '/favicon-off.png';
-    };
-    window.onfocus = function () {
-      var link: any = document.querySelector("link[rel~='icon']");
-      link.href = '/favicon-on.png';
-    };
-    console.log(Astro.url.pathname);
-  </script>
-  <style is:global>
-    html,
-    body {
-      font-family: system-ui, sans-serif;
-      background: #13151a;
-      color: white;
-      width: 100%;
-      height: 100%;
-    }
-    .logo {
-      display: flex;
-      align-items: start;
-      flex: 1;
-    }
-    nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-      gap: 2rem;
-    }
-    code {
-      font-family:
-        Menlo,
-        Monaco,
-        Lucida Console,
-        Liberation Mono,
-        DejaVu Sans Mono,
-        Bitstream Vera Sans Mono,
-        Courier New,
-        monospace;
-    }
-  </style>
+    <script>
+      window.onblur = function () {
+        var link: any = document.querySelector("link[rel~='icon']");
+        link.href = '/favicon-off.png';
+      };
+      window.onfocus = function () {
+        var link: any = document.querySelector("link[rel~='icon']");
+        link.href = '/favicon-on.png';
+      };
+      console.log(Astro.url.pathname);
+    </script>
+    <style is:global>
+      html,
+      body {
+        font-family: system-ui, sans-serif;
+        background: #13151a;
+        color: white;
+        width: 100%;
+        height: 100%;
+      }
+      .logo {
+        display: flex;
+        align-items: start;
+        flex: 1;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        gap: 2rem;
+      }
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
+    </style>
+  </body>
 </html>
