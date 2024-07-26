@@ -2,14 +2,23 @@
 interface Props {
   title: string;
 }
-import '@fontsource/jost';
+import '@fontsource/jost/100.css';
+import '@fontsource/jost/200.css';
+import '@fontsource/jost/300.css';
+import '@fontsource/jost/400.css';
+import '@fontsource/jost/500.css';
+import '@fontsource/jost/600.css';
+import '@fontsource/jost/700.css';
+import '@fontsource/jost/800.css';
+import '@fontsource/jost/900.css';
 import '@fontsource/sen';
 import { Icon } from 'astro-icon/components';
 import { ViewTransitions } from 'astro:transitions';
 
 const { title } = Astro.props;
 const { pathname } = Astro.url;
-const currentLinkClass = 'text-primary-500 pointer-events-none font-light';
+const currentLinkClass =
+  'text-primary-500 pointer-events-none font-light tracking-[0.065em]';
 const hoverLinkClass = 'text-primary-100 hover:text-accent-200';
 
 const checkClass = (path: string) => {
