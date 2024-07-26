@@ -71,7 +71,7 @@ const links = [
     <ViewTransitions />
   </head>
   <body class='font-jost subpixel-antialiased bg-bg-100'>
-    <div class='hidden w-full h-dvh bg-bg-200'>
+    <div id='collapsable-menu' class='hidden w-full h-dvh bg-bg-200'>
       <div class='flex h-[100dvh] w-[100dvw] flex-col'>
         <div
           class='flex h-14 w-full items-center justify-center border-b-4 border-solid border-accent-500 bg-bg-400'>
@@ -144,8 +144,9 @@ const links = [
         </div>
         <div class='md:hidden'>
           <Icon
+            id='open-menu-button'
             name='mdi:menu'
-            class='subpixel-antialiased text-primary-100'
+            class='subpixel-antialiased text-primary-100 cursor-pointer'
             size={40}
           />
         </div>
@@ -164,6 +165,20 @@ const links = [
       <slot />
     </main>
     <script>
+      document
+        .querySelector('#open-menu-button')
+        ?.addEventListener('click', () => {
+          document
+            .querySelector('#collapsable-menu')
+            ?.classList.toggle('hidden');
+        });
+      document
+        .querySelector('#close-menu-button')
+        ?.addEventListener('click', () => {
+          document
+            .querySelector('#collapsable-menu')
+            ?.classList.toggle('hidden');
+        });
       window.onblur = function () {
         var link: any = document.querySelector("link[rel~='icon']");
         link.href = '/favicon-off.png';
