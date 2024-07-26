@@ -66,21 +66,21 @@ const links = [
         <a href='/'>
           <img src='/logo.png' alt='Logo' />
         </a>
-        <a href='https://www.tiktok.com/@emoporemilio'>
+        <a target='_blank' href='https://www.tiktok.com/@emoporemilio'>
           <Icon
             name='ic:baseline-tiktok'
             class='subpixel-antialiased text-primary-500'
             size={24}
           />
         </a>
-        <a href='https://www.github.com/emoporemilio'>
+        <a target='_blank' href='https://www.github.com/emoporemilio'>
           <Icon
             name='mdi:github'
             class='subpixel-antialiased text-primary-200'
             size={24}
           /></a
         >
-        <a href='https://www.youtube.com/emoporemilio'>
+        <a target='_blank' href='https://www.youtube.com/emoporemilio'>
           <Icon
             name='mdi:youtube'
             class='subpixel-antialiased text-accent-500'
@@ -88,13 +88,22 @@ const links = [
           />
         </a>
       </div>
-      {
-        links.map((link) => (
-          <a class={link.class} href={link.href}>
-            {link.text}
-          </a>
-        ))
-      }
+      <div class='hidden md:flex gap-8'>
+        {
+          links.map((link) => (
+            <a class={link.class} href={link.href}>
+              {link.text}
+            </a>
+          ))
+        }
+      </div>
+      <div class='md:hidden'>
+        <Icon
+          name='mdi:menu'
+          class='subpixel-antialiased text-primary-500'
+          size={24}
+        />
+      </div>
     </nav>
     <main class='flex flex-col items-center justify-center'>
       <slot />
