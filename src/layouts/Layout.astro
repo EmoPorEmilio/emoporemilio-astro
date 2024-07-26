@@ -48,7 +48,7 @@ const links = [
       name='description'
       content='¡Buenas, buenas, entusiastas de la tecnología! Soy EmoPorEmilio y transmito en línea acerca de tecnología y juegos.'
     />
-    <meta name='viewport' content='width=device-width' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link
       rel='icon'
       type='image/png'
@@ -64,9 +64,12 @@ const links = [
       class='bg-bg-400 h-[70px] border-b-4 border-accent-500 text-lg font-semibold'>
       <div class='flex items-start flex-1 gap-2'>
         <a href='/'>
-          <img src='/logo.png' alt='Logo' />
+          <img width='55' height='28' src='/logo.png' alt='Logo' />
         </a>
-        <a target='_blank' href='https://www.tiktok.com/@emoporemilio'>
+        <a
+          class='md:hidden'
+          target='_blank'
+          href='https://www.tiktok.com/@emoporemilio'>
           <Icon
             name='ic:baseline-tiktok'
             class='subpixel-antialiased text-primary-500'
@@ -100,8 +103,8 @@ const links = [
       <div class='md:hidden'>
         <Icon
           name='mdi:menu'
-          class='subpixel-antialiased text-primary-500'
-          size={24}
+          class='subpixel-antialiased text-primary-100'
+          size={40}
         />
       </div>
     </nav>
