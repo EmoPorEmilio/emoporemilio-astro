@@ -105,7 +105,7 @@ const links = [
           </a>
         </div>
         <div
-          class='flex h-14 w-full items-center justify-center border-b-4 border-solid border-accent-500 bg-bg-400'>
+          class='flex h-14 w-full items-center justify-center border-b-2 border-solid border-accent-500 bg-bg-400'>
           <span class='text-4xl font-bold tracking-wider text-primary-300'>
             TUTORIALES
           </span>
@@ -113,7 +113,7 @@ const links = [
       </div>
     </div>
     <nav
-      class='bg-bg-400 h-[70px] border-b-4 border-accent-500 text-lg font-semibold'>
+      class='bg-bg-400 h-[55px] text-lg font-semibold justify-around items-center flex py-6 px-2'>
       <div
         class='flex justify-between items-center md:justify-start gap-2 flex-1'>
         <a href='/'>
@@ -161,9 +161,12 @@ const links = [
         }
       </div>
     </nav>
-    <main class='flex flex-col items-center justify-center'>
-      <slot />
-    </main>
+    <div class='bg-bg-400'>
+      <main
+        class='flex flex-col items-center justify-center border-t-2 border-accent-500 rounded-xl bg-bg-100'>
+        <slot />
+      </main>
+    </div>
     <script>
       document
         .querySelector('#open-menu-button')
@@ -196,18 +199,6 @@ const links = [
         color: white;
         width: 100%;
         height: 100%;
-      }
-      .logo {
-        display: flex;
-        align-items: start;
-        flex: 1;
-      }
-      nav {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-        gap: 2rem;
       }
       code {
         font-family:
