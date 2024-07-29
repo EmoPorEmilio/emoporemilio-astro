@@ -36,7 +36,7 @@ export default {
       dropShadow: {
         logo: '2px 1px #DF5C9A',
         'title-primary': '0 4px #58748B',
-        'title-card': '0px 1px #DF5C9A',
+        'title-card': '0px 2px #4C6477',
       },
       boxShadow: {
         'primary-chip': '0px 1px #75ABC7',
