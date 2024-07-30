@@ -1,0 +1,77 @@
+---
+interface Props {
+  title: string;
+}
+import '@fontsource/jost/100.css';
+import '@fontsource/jost/200.css';
+import '@fontsource/jost/300.css';
+import '@fontsource/jost/400.css';
+import '@fontsource/jost/500.css';
+import '@fontsource/jost/600.css';
+import '@fontsource/jost/700.css';
+import '@fontsource/jost/800.css';
+import '@fontsource/jost/900.css';
+import '@fontsource/sen/400.css';
+import '@fontsource/sen/500.css';
+import '@fontsource/sen/600.css';
+import '@fontsource/sen/700.css';
+import '@fontsource/sen/800.css';
+import { ViewTransitions } from 'astro:transitions';
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='description'
+      content='¡Buenas, buenas, entusiastas de la tecnología! Soy EmoPorEmilio y transmito en línea acerca de tecnología y juegos.'
+    />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link
+      rel='icon'
+      type='image/png'
+      id='activity-favicon'
+      href='/favicon-on.png'
+    />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class='font-jost subpixel-antialiased bg-bg-100'>
+    <slot />
+    <script>
+      window.onblur = function () {
+        var link: any = document.querySelector("link[rel~='icon']");
+        link.href = '/favicon-off.png';
+      };
+      window.onfocus = function () {
+        var link: any = document.querySelector("link[rel~='icon']");
+        link.href = '/favicon-on.png';
+      };
+    </script>
+    <style is:global>
+      html,
+      body {
+        font-family: system-ui, sans-serif;
+        background: #13151a;
+        color: white;
+        width: 100%;
+        height: 100%;
+      }
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
+    </style>
+  </body>
+</html>
