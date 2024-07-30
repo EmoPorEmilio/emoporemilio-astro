@@ -8,3 +8,9 @@ export enum ButtonType {
   Link = 'link',
   Text = 'text',
 }
+
+export interface HeaderLink {
+  text: string;
+  href: string;
+  class?: string;
+}

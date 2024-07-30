@@ -3,13 +3,19 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/layouts/*": ["src/layouts/*"],
-      "@/components/*": ["src/components/*"],
+      "@/layouts/*": [
+        "src/layouts/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
     },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   },
   "include": [
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.astro"
-  ]
+, "src/components/Header.tsx", "src/components/Header.tsx"  ]
 }
