@@ -34,49 +34,12 @@ const links: HeaderLink[] = [
     class: checkClass('/about'),
   },
 ];
+
+const { title } = Astro.props as Props;
 ---
 
-<BaseLayout title='EmoPorEmilio'>
-  <div id='collapsable-menu' class='hidden w-full h-dvh bg-bg-200'>
-    <div class='flex h-[100dvh] w-[100dvw] flex-col'>
-      <div
-        class='flex h-14 w-full items-center justify-center border-b-4 border-solid border-accent-500 bg-bg-400'>
-        <span
-          class='text-4xl font-jost font-extrabold tracking-wider text-primary-300'>
-          ANUNCIOS
-        </span>
-      </div>
-      <div
-        class='flex h-10 w-full items-center border-b-4 border-bg-100 bg-primary-600 pl-4'>
-        <a href='/' class={`font-sen text-xl text-gray-200`}>
-          Proyecto Viviana
-        </a>
-      </div>
-      <div
-        class='flex h-10 w-full items-center border-b-4 border-bg-100 bg-primary-600 pl-4'>
-        <a href='/' class={'font-sen text-xl text-gray-200'}>
-          Proyecto Viviana
-        </a>
-      </div>
-      <div
-        class='flex h-10 w-full items-center border-b-4 border-bg-100 bg-primary-600 pl-4'>
-        <a href='/calendar' class={'font-sen text-xl text-gray-200'}>
-          Calendar
-        </a>
-      </div>
-      <div
-        class='flex h-10 w-full items-center border-b-4 border-bg-100 bg-primary-600 pl-4'>
-        <a href='/mobile' class={'font-sen text-xl text-gray-200'}> Mobile </a>
-      </div>
-      <div
-        class='flex h-14 w-full items-center justify-center border-b-2 border-solid border-accent-500 bg-bg-400'>
-        <span class='text-4xl font-bold tracking-wider text-primary-300'>
-          TUTORIALES
-        </span>
-      </div>
-    </div>
-  </div>
-  <Header links={links} />
+<BaseLayout title={title}>
+  <Header client:only='solid-js' links={links} />
   <div class='bg-bg-400'>
     <main
       class='flex flex-col items-center justify-center border-t-2 border-accent-500 rounded-t-xl bg-bg-100'>
@@ -85,13 +48,4 @@ const links: HeaderLink[] = [
   </div>
 </BaseLayout>
 
-<script>
-  document.querySelector('#open-menu-button')?.addEventListener('click', () => {
-    document.querySelector('#collapsable-menu')?.classList.toggle('hidden');
-  });
-  document
-    .querySelector('#close-menu-button')
-    ?.addEventListener('click', () => {
-      document.querySelector('#collapsable-menu')?.classList.toggle('hidden');
-    });
-</script>
+<script></script>
