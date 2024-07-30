@@ -28,7 +28,7 @@ export default function Header({ links }: HeaderProps) {
 
   return (
     <>
-        <nav id="collapsable-menu" class='transition-all scale-0 origin-top-right z-10 absolute w-full h-full bg-bg-200'>
+        <nav id="collapsable-menu" class='transition duration-300 ease-in-out scale-0 origin-top-right z-10 absolute w-full h-full bg-bg-200'>
           <div class='flex h-[100dvh] w-[100dvw] flex-col'>
             <div class='flex h-14 w-full items-center justify-center border-b-4 border-solid border-accent-500 bg-bg-400'>
               <ImCross size={30} onclick={() => handleCloseMenu()} class='absolute left-4 subpixel-antialiased text-accent-200 cursor-pointer origin-top-right'/>
