@@ -1,0 +1,32 @@
+---
+import { ButtonType } from './types';
+
+interface Props {
+  label?: string;
+  type: ButtonType;
+  className: string;
+}
+
+const { label, type, className } = Astro.props;
+const buttonDynamicClass = (type: ButtonType) => {
+  switch (type) {
+    case ButtonType.Primary:
+      return 'font-medium bg-primary-700 text-primary-200 shadow-primary-chip';
+    case ButtonType.Secondary:
+      return 'font-regular bg-bg-400 text-primary-500 border-solid border border-primary-500';
+    case ButtonType.Danger:
+      return 'font-regular bg-danger-600 text-danger-100 border-solid border border-danger-400';
+    case ButtonType.Success:
+      return 'font-regular bg-success-600 text-success-100 border-solid border border-success-400';
+    case ButtonType.Link:
+      return 'font-regular text-danger-500 text-accent-200 hover:text-accent-500';
+  }
+};
+---
+
+<button
+  class={`${className} font-jost font-regular whitespace-nowrap	tracking-wider ${buttonDynamicClass(type)} w-auto rounded-lg px-4 py-2 text-base`}>
+  <span>{label}</span>
+</button>
+
+<style></style>

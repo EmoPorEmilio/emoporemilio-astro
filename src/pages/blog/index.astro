@@ -1,9 +1,24 @@
 ---
+import Card from '@/components/Card.astro';
 import Layout from '@/layouts/Layout.astro';
+import Button from '@/components/Button.astro';
+import { ButtonType } from '@/components/types';
 ---
 
-<Layout title='EmoPorEmilio' />
+<Layout title='EmoPorEmilio'>
+  <Card title='Título test 1 Título' author='EmoPorEmilio' date='26/07/2024'>
+    <div class='flex flex-col items-center justify-center'>
+      <p class=''>¡Buenas, buenas, entusiastas de la tecnología!</p>
+      <p class=''>
+        Me llamo Emilio Franceschini, me dicen Emo y tengo 30 años.
+      </p>
+      <div class='pt-4 w-full flex justify-center'>
+        <Button className='' type={ButtonType.Link} label='LEER MÁS...' />
+      </div>
+    </div>
 
-<script></script>
+    <script></script>
 
-<style></style>
+    <style></style>
+  </Card></Layout
+>
