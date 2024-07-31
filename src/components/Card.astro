@@ -1,7 +1,9 @@
 ---
+import type { Author } from './types';
+
 interface Props {
   title: string;
-  author: string;
+  author: Author;
   date: string;
   tags: string[];
 }
@@ -21,7 +23,9 @@ const { title, author, date, tags } = Astro.props;
       <div
         class='flex h-[20px] items-center justify-end rounded-t-[100px] bg-primary-700 pr-4'>
         <span class='font-regular text-sm text-primary-300'>
-          <span class='font-semibold'>{author}</span>
+          <a href={author.href} target='_blank' class='font-semibold'
+            >{author.name}</a
+          >
           -
           {date}
         </span>

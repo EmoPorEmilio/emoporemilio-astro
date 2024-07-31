@@ -9,6 +9,10 @@ export enum ButtonType {
   Text = 'text',
 }
 
+export interface Author {
+  name: string;
+  href: string;
+}
 export interface HeaderLink {
   text: string;
   href: string;
