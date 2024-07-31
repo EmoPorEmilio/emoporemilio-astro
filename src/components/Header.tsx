@@ -67,7 +67,7 @@ export default function Header({ links }: HeaderProps) {
       <nav class='bg-bg-400 h-[55px] text-lg font-semibold justify-around items-center flex py-6 px-4'>
         <div class='flex justify-between items-center md:justify-start gap-2 flex-1'>
           <a href='/'>
-            <img width='55' height='28' src='/logo.svg' alt='Logo' />
+            <img class="hover:animate-wiggle" width='55' height='28' src='/logo.svg' alt='Logo' />
           </a>
           <div class='flex md:justify-center items-center gap-2'>
             <a target='_blank' href='https://www.tiktok.com/@emoporemilio'>

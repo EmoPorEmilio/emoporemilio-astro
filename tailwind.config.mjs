@@ -3,6 +3,15 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
       fontFamily: {
         jost: ['Jost', 'sans-serif'],
         sen: ['Sen', 'sans-serif'],
@@ -40,6 +49,7 @@ export default {
       },
       boxShadow: {
         'primary-chip': '0px 1px #75ABC7',
+        card: '0px 2px 20px -10px #DF5C9A',
       },
     },
   },
