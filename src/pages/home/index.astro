@@ -1,0 +1,28 @@
+---
+import Card from '@/components/Card.astro';
+import Layout from '@/layouts/WebLayout.astro';
+import Button from '@/components/Button.astro';
+import { ButtonType } from '@/components/types';
+---
+
+<Layout title='Home'>
+  <Card
+    title='Fracaprendizaje #1'
+    author={{ name: 'EmoPorEmilio', href: 'https://emoporemilio.uy/about' }}
+    date='26/07/2024'
+    tags={['fracaprendizajes']}>
+    <div class='flex flex-col items-center justify-center'>
+      <p class=''>¡Buenas, buenas, entusiastas de la tecnología!</p>
+      <p class=''>
+        Me llamo Emilio Franceschini, me dicen Emo y tengo 30 años.
+      </p>
+      <div class='pt-4 w-full flex justify-center'>
+        <Button className='' type={ButtonType.Link} label='LEER MÁS...' />
+      </div>
+    </div>
+
+    <script></script>
+
+    <style></style>
+  </Card></Layout
+>
