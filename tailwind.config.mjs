@@ -5,8 +5,9 @@ export default {
     extend: {
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
+          '0%, 50%, 100%': { transform: 'rotate(0deg) scale(1)' },
+          '25%': { transform: 'rotate(-3deg) scale(0.9)' },
+          '75%': { transform: 'rotate(3deg) scale(0.9)' },
         },
       },
       animation: {
@@ -43,13 +44,14 @@ export default {
         'danger-600': '#9D5555',
       },
       dropShadow: {
-        logo: '2px 1px #DF5C9A',
+        logo: '6px 1px #DF5C9A',
+        'logo-white': '0px 1px #ffffff',
         'title-primary': '0 4px #58748B',
         'title-card': '0px 2px #4C6477',
       },
       boxShadow: {
         'primary-chip': '0px 1px #75ABC7',
-        card: '0px 2px 20px -10px #DF5C9A',
+        card: '0px 20px 25px -20px #DF5C9A',
       },
     },
   },
