@@ -13,7 +13,7 @@ const buttonDynamicClass = (type: ButtonType) => {
     case ButtonType.Primary:
       return 'font-medium bg-primary-700 text-primary-200 shadow-primary-chip';
     case ButtonType.Secondary:
-      return 'font-regular bg-bg-400 text-primary-500 border-solid border border-primary-500';
+      return 'font-regular bg-bg-400 text-primary-500 border-solid border border-primary-500 hover:border-accent-500';
     case ButtonType.Danger:
       return 'font-regular bg-danger-600 text-danger-100 border-solid border border-danger-400';
     case ButtonType.Success:
@@ -25,7 +25,7 @@ const buttonDynamicClass = (type: ButtonType) => {
 ---
 
 <button
-  class={`${className} font-jost font-regular whitespace-nowrap	tracking-wider ${buttonDynamicClass(type)} w-auto rounded-lg px-4 py-2 text-base`}>
+  class={`${className} font-jost whitespace-nowraptracking-wider ${buttonDynamicClass(type)} w-auto rounded-lg px-4 py-2 text-base`}>
   <span>{label}</span>
 </button>
 
