@@ -81,7 +81,7 @@ export default function Header({ links }: HeaderProps) {
               class='group-hover:animate-wiggle'
               width='55'
               height='28'
-              src='/logo.svg'
+              src='images/logo.svg'
               alt='Logo'
             />
           </a>
